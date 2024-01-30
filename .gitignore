@@ -28,7 +28,7 @@ yarn-error.log*
 # local env files
 .env*.local
 gy_shh_key
-gy_shh_key_pub
+gy_shh_key.pub
 
 # vercel
 .vercel
