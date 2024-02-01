@@ -33,7 +33,7 @@ const LoadingIssuesPage = () => {
               </Table.Row>
             ))}
           </Table.Body>
-      </Table.Root>
+        </Table.Root>
     </div>
   )
 }
