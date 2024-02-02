@@ -15,12 +15,12 @@ export async function PATCH(
   });
   if (!issue)
     return NextResponse.json({ error: "Issue not found" }, { status: 400 });
-  const uptadedIssue = await prisma.issue.update({
+  const updatedIssue = await prisma.issue.update({
     where: { id: issue.id },
     data: {
       title: body.title,
       description: body.description,
     },
   });
-  return NextResponse.json(uptadedIssue);
+  return NextResponse.json(updatedIssue);
 }
