@@ -16,7 +16,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-
 }
 
 @layer utilities {
@@ -25,6 +24,6 @@ body {
   }
 }
 
-.editor-statusbar{
+.editor-statusbar {
   display: none;
 }
