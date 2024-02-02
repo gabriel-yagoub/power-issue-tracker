@@ -12,12 +12,12 @@ const IssuesPage = async () => {
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Issue</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Ärende</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell className="hidden md:table-cell">
               Status
             </Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Created
+              Skapad
             </Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>

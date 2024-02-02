@@ -64,7 +64,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
           control={control}
           defaultValue={issue?.description}
           render={({ field }) => (
-            <SimpleMDE placeholder="Beskriv ditt arende" {...field} />
+            <SimpleMDE placeholder="Beskriv ditt ärende" {...field} />
           )}
         />
         {<ErrorMessage>{errors.description?.message}</ErrorMessage>}
