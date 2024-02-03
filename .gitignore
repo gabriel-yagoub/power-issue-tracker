@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 gy_shh_key
 gy_shh_key.pub
 
