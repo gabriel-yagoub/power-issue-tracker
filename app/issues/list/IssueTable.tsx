@@ -27,7 +27,7 @@ const IssueTable = ({ searchParams, issues }: Props) => {
             >
               <NextLink
                 href={{
-                  query: { ...searchParams, orderBy: column.value },
+                  query: { ...searchParams, orderBy: column.value as string },
                 }}
               >
                 {column.label}
