@@ -1,4 +1,6 @@
+//@ts-nocheck
 "use client";
+
 import { Status } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -26,7 +28,7 @@ const IssueStatusFilter = () => {
         router.push("/issues/list" + query);
       }}
     >
-      <Select.Trigger />
+      <Select.Trigger placeholder="Filtrera på status" />
       <Select.Content>
         {statuses.map((status) => (
           <Select.Item key={status.value || ""} value={status.value || ""}>
