@@ -3,7 +3,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  generateEtags: false,
+  headers: () => [
+    {
+      source: "/",
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "no-store",
+        },
+      ],
+    },
+  ],
 };
 
 export default nextConfig;
