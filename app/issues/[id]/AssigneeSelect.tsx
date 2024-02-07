@@ -18,7 +18,6 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
     axios
       .patch("/api/issues/" + issue.id, {
         assignedToUserId: userId || null,
-        refetchOnMount: true,
       })
       .catch(() => {
         toast.error("Gick inte att spara ändringarna");
@@ -58,8 +57,8 @@ const useUsers = () =>
   useQuery<User[]>({
     queryKey: ["users"],
     queryFn: () => axios.get("/api/users").then((res) => res.data),
-    //staleTime: 5 * 1000,
-    //retry: 3,
+    staleTime: 60 * 1000,
+    retry: 3,
   });
 
 export const dynamic = "force-dynamic";
