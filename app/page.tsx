@@ -12,11 +12,13 @@ interface Issues {
 }
 
 interface HomeProps {
-  issues: Issues;
+  issues?: Issues; // Make issues optional
 }
 
 export default function Home({ issues }: HomeProps) {
-  const { open, inProgress, closed } = issues;
+  // Check if issues is undefined, use default values if so
+  const { open = 0, inProgress = 0, closed = 0 } = issues || {};
+
   return (
     <Grid columns={{ initial: "1", md: "2" }} gap="5">
       <Flex direction="column" gap="5">
