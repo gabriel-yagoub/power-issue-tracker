@@ -49,5 +49,5 @@ export async function generateMetadata({ params }: Props) {
     description: "Details of Issue" + issue.id,
   };
 }
-
+export const dynamic = "force-dynamic";
 export default IssueDetailPage;
