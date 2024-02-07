@@ -24,9 +24,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
       });
     {
       if (userId) {
-        users?.map((user) =>
-          toast.success("Ärendet har tilldelats " + user.name)
-        );
+        toast.success("Ärendet har tilldelats");
       } else toast.error("Ärendet har inte tilldelats");
     }
   };
@@ -63,4 +61,5 @@ const useUsers = () =>
     retry: 3,
   });
 
+export const dynamic = "force-dynamic";
 export default AssigneeSelect;
