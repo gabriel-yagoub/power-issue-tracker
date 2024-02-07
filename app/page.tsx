@@ -4,6 +4,11 @@ import IssueChart from "./IssueChart";
 import { Flex, Grid } from "@radix-ui/themes";
 import LatestIssues from "./LatestIssues";
 import { Metadata } from "next";
+import { useRouter } from "next/router";
+
+const router = useRouter();
+// Force refresh the page
+router.reload();
 
 export default async function Home() {
   const open = await prisma.issue.count({ where: { status: "OPEN" } });
