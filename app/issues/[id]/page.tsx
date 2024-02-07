@@ -43,7 +43,7 @@ const IssueDetailPage = async ({ params }: Props) => {
     </Grid>
   );
 };
-
+/*
 export async function generateMetadata({ params }: Props) {
   const issue = await fetchUser(parseInt(params.id));
   return {
@@ -51,5 +51,6 @@ export async function generateMetadata({ params }: Props) {
     description: "Details of Issue" + issue.id,
   };
 }
+*/
 export const dynamic = "force-dynamic";
 export default IssueDetailPage;
