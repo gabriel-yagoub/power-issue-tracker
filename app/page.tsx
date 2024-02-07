@@ -1,5 +1,3 @@
-"use client";
-
 import prisma from "@/prisma/client";
 import IssueSummary from "./IssueSummary";
 import IssueChart from "./IssueChart";
