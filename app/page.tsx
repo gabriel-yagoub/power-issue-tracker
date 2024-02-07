@@ -1,11 +1,32 @@
-//@ts-nocheck
-
 import prisma from "@/prisma/client";
 import IssueSummary from "./IssueSummary";
 import IssueChart from "./IssueChart";
 import { Flex, Grid } from "@radix-ui/themes";
 import LatestIssues from "./LatestIssues";
 import { Metadata } from "next";
+
+interface Issues {
+  open: number;
+  inProgress: number;
+  closed: number;
+}
+
+interface HomeProps {
+  issues: Issues;
+}
+
+export default function Home({ issues }: HomeProps) {
+  const { open, inProgress, closed } = issues;
+  return (
+    <Grid columns={{ initial: "1", md: "2" }} gap="5">
+      <Flex direction="column" gap="5">
+        <IssueSummary open={open} inProgress={inProgress} closed={closed} />
+        <IssueChart open={open} inProgress={inProgress} closed={closed} />
+      </Flex>
+      <LatestIssues />
+    </Grid>
+  );
+}
 
 export const getServerSideProps = async () => {
   const open = await prisma.issue.count({ where: { status: "OPEN" } });
@@ -24,19 +45,6 @@ export const getServerSideProps = async () => {
     },
   };
 };
-
-export default async function Home({ issues }) {
-  const { open, inProgress, closed } = issues;
-  return (
-    <Grid columns={{ initial: "1", md: "2" }} gap="5">
-      <Flex direction="column" gap="5">
-        <IssueSummary open={open} inProgress={inProgress} closed={closed} />
-        <IssueChart open={open} inProgress={inProgress} closed={closed} />
-      </Flex>
-      <LatestIssues />
-    </Grid>
-  );
-}
 
 export const metadata: Metadata = {
   title: "Power Issue Tracker - Dashboard",
