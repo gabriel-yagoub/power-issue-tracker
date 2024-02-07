@@ -2,7 +2,7 @@
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
-    source: "/:path*",
+    source: "/",
     headers: [
       {
         key: "Cache-Control",
