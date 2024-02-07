@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 "use client";
 
 import { Skeleton } from "@/app/components";
