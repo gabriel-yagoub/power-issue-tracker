@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import prisma from "@/prisma/client";
 import IssueSummary from "./IssueSummary";
