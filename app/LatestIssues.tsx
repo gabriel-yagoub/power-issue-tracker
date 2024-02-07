@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import prisma from "@/prisma/client";
 import { Avatar, Card, Flex, Heading, Table } from "@radix-ui/themes";
@@ -9,9 +11,7 @@ const LatestIssues = async () => {
   const issues = await prisma.issue.findMany({
     orderBy: { createdAt: "desc" },
     take: 5,
-    include: {
-      assignedToUser: true,
-    },
+    include: { assignedToUser: true },
   });
 
   return (
