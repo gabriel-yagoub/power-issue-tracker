@@ -27,7 +27,7 @@ const NavBar = () => {
           <Flex align="center" gap="5">
             <Link href="/">
               <Image
-                src="/Power_Logo.svg"
+                src="/Power_logo.svg"
                 width={80}
                 height={10}
                 alt="Power Logotyp"
