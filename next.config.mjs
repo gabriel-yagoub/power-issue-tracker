@@ -2,6 +2,13 @@
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
+    source: "/:path*",
+    headers: [
+      {
+        key: "Cache-Control",
+        value: "no-store",
+      },
+    ],
   },
 };
 
