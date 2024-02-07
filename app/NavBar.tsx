@@ -17,15 +17,21 @@ import {
   Button,
 } from "@radix-ui/themes";
 import { Skeleton } from "@/app/components";
+import Image from "next/image";
 
 const NavBar = () => {
   return (
     <nav className="border-b mb-5 px-5 py-3">
       <Container>
         <Flex justify="between">
-          <Flex align="center" gap="3">
+          <Flex align="center" gap="5">
             <Link href="/">
-              <ImPower />
+              <Image
+                src="/Power_Logo.svg"
+                width={80}
+                height={10}
+                alt="Power Logotyp"
+              />
             </Link>
             <NavLinks />
           </Flex>
