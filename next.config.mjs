@@ -2,14 +2,8 @@
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
-    source: "/",
-    headers: [
-      {
-        key: "Cache-Control",
-        value: "no-store",
-      },
-    ],
   },
+  generateEtags: false,
 };
 
 export default nextConfig;
