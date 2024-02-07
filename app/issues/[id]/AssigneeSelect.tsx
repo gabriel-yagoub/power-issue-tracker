@@ -6,7 +6,6 @@ import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { useIsFetching } from "@tanstack/react-query";
 
 const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   const { data: users, error, isLoading } = useUsers();
@@ -54,20 +53,6 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   );
 };
 
-const useUsers = () => {
-  const { data, error, isLoading, refetch } = useQuery<User[]>({
-    queryKey: ["users"],
-    queryFn: () => axios.get("/api/users").then((res) => res.data),
-    staleTime: 60 * 1000,
-    retry: 3,
-  });
-
-  const isFetching = useIsFetching(); // Get isFetching status
-
-  return { data, error, isLoading, refetch, isFetching };
-};
-
-/*
 const useUsers = () =>
   useQuery<User[]>({
     queryKey: ["users"],
@@ -75,7 +60,6 @@ const useUsers = () =>
     staleTime: 60 * 1000,
     retry: 3,
   });
-*/
 
 export const dynamic = "force-dynamic";
 export default AssigneeSelect;
