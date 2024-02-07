@@ -51,12 +51,12 @@ export default function Home() {
 }
 
 export const dynamic = "force-dynamic";
-
+/*
 export const metadata: Metadata = {
   title: "Power Issue Tracker - Dashboard",
   description: "Overview of the current issues and status",
 };
-
+*/
 /*
 import prisma from "@/prisma/client";
 import IssueSummary from "./IssueSummary";
